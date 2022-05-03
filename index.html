@@ -1,2 +1,330 @@
 
-join https://jace.lol/discord/
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta content="Melanie Discord Bot Dashboard" property="og:site_name" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://cdn.discordapp.com/avatars/877732605242511412/958ad0698f0525c8b865e212de3273d9.png?size=1024" />
+<link rel="icon" type="image/png" href="https://cdn.discordapp.com/avatars/877732605242511412/958ad0698f0525c8b865e212de3273d9.png?size=1024" />
+<title> Home </title>
+
+<meta content=" Home " property="og:title" />
+<meta content="Interactive dashboard to control and interact with melanie" property="og:description" />
+<meta content="https://cdn.discordapp.com/avatars/877732605242511412/958ad0698f0525c8b865e212de3273d9.png?size=1024" property="og:image" />
+<meta content="#ba54f5" name="theme-color" />
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/assets/css/bootstrap-select.min.css?v=1.0.0" />
+
+<link href="/static/assets/css/nucleo-icons.css" rel="stylesheet" />
+
+<link href="/static/assets/css/black-dashboard.min.css?v=1.0.0" rel="stylesheet" />
+
+</head>
+<body data="primary">
+
+<script src="/static/assets/js/core/jquery.min.js"></script>
+<script src="/static/assets/js/core/popper.min.js"></script>
+<script src="/static/assets/js/core/bootstrap.min.js"></script>
+<script src="/static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+<script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
+
+<script src="/static/assets/js/black-dashboard.min.js?v=1.0.0"></script>
+<div class="wrapper">
+<div class="sidebar">
+<div class="sidebar-wrapper">
+<div class="logo">
+<a class="simple-text logo-mini clickable dontcolor" target="_blank">
+<i class="tim-icons icon-atom"></i>
+</a>
+<a class="simple-text logo-normal clickable dontcolor" target="_blank">
+Dashboard
+</a>
+</div>
+<ul class="nav">
+<li id="navindex">
+<a href="/?lang_code=en">
+<i class="tim-icons icon-chart-pie-36"></i>
+<p>Home</p>
+</a>
+</li>
+<li id="navcommands">
+<a href="/commands?lang_code=en">
+<i class="tim-icons icon-molecule-40"></i>
+<p>Commands</p>
+</a>
+</li>
+<li id="navlogin">
+<a href="/login?lang_code=en">
+<i class="tim-icons icon-key-25"></i>
+<p>Login</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="main-panel">
+
+<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+<div class="container-fluid">
+<div class="navbar-wrapper">
+<div class="navbar-toggle d-inline">
+<button type="button" class="navbar-toggler">
+<span class="navbar-toggler-bar bar1"></span>
+<span class="navbar-toggler-bar bar2"></span>
+<span class="navbar-toggler-bar bar3"></span>
+</button>
+</div>
+<a class="navbar-brand" href="javascript:void(0)">melanie Dashboard</a>
+</div>
+</div>
+</nav>
+<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<i class="tim-icons icon-simple-remove"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content">
+<div class="row">
+<div class="col-12">
+<div class="card card-chart">
+<div class="card-header ">
+<div class="row">
+<div class="col-sm-12 text-left">
+<h5 class="card-category">melanie • Owned by admire applications</h5>
+<h2 class="card-title">About</h2>
+</div>
+</div>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-lg-3">
+<img src="https://cdn.discordapp.com/avatars/877732605242511412/958ad0698f0525c8b865e212de3273d9.png?size=1024" style="height: 200px; width: 200px; border-radius: 50%; margin: auto; display: block;">
+</div>
+<div class="col-lg-8">
+<h4><p>Melanie is one of the most advanced bots on discord. Control your Spotify, moderate your server, or share TikToks instantly in chat. Over 300 commands. It's the only bot you need.</p>
+</h4>
+<br />
+<a href="https://discord.com/oauth2/authorize?client_id=877732605242511412&amp;scope=bot&amp;permissions=8589934591" target="_blank">Invite</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<footer class="footer">
+<div class="container-fluid">
+<ul class="nav"></ul>
+</div>
+</footer>
+</div>
+</div>
+<script>
+  $(document).ready(function () {
+    $().ready(function () {
+      $sidebar = $('.sidebar');
+      $navbar = $('.navbar');
+      $main_panel = $('.main-panel');
+      $buttons = $('button');
+      $as = $('a')
+      $inputs = $('input')
+      $textareas = $('textarea')
+      $bcitems = $('.breadcrumb-item')
+
+      $full_page = $('.full-page');
+
+      $sidebar_responsive = $('body > .navbar-collapse');
+      sidebar_mini_active = true;
+      white_color = false;
+
+      white_color = localStorage.getItem("color") === "white"
+
+
+      window_width = $(window).width();
+
+      fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+      reversed_locales = { 'Afrikaans - Suid-Afrika': 'af_ZA', 'العربية - المملكة العربية السعودية': 'ar_SA', 'български - България': 'bg_BG', 'català - Espanya': 'ca_ES', 'čeština - Česko': 'cs_CZ', 'dansk - Danmark': 'da_DK', 'Deutsch - Deutschland': 'de_DE', 'Ελληνικά - Ελλάδα': 'el_GR', 'English': 'en', 'español - España': 'es_ES', 'suomi - Suomi': 'fi_FI', 'français': 'fr', 'français - France': 'fr_FR', 'עברית - ישראל': 'he_IL', 'magyar - Magyarország': 'hu_HU', 'Indonesia - Indonesia': 'id_ID', 'italiano - Italia': 'it_IT', '日本語 - 日本': 'ja_JP', '한국어 - 대한민국': 'ko_KR', 'Nederlands - Nederland': 'nl_NL', 'norsk bokmål - Norge': 'no_NO', 'polski - Polska': 'pl_PL', 'português - Brasil': 'pt_BR', 'português - Portugal': 'pt_PT', 'română - România': 'ro_RO', 'русский - Россия': 'ru_RU', 'slovenčina - Slovensko': 'sk_SK', 'svenska - Sverige': 'sv_SE', 'Türkçe - Türkiye': 'tr_TR', 'українська - Україна': 'uk_UA', 'Tiếng Việt - Việt Nam': 'vi_VN', '中文 - 中国': 'zh_CN', '中文 - 中國香港特別行政區': 'zh_HK', '中文 - 台灣': 'zh_TW' }
+
+
+      $("#changelocale").click(function (event) {
+        var locale = $("#localepicker").val()
+        var real_locale = reversed_locales[locale]
+        var redirect = "/?lang_code=en".replace("en", real_locale)
+        window.location.replace(redirect)
+      })
+      $('.fixed-plugin a').click(function (event) {
+        if ($(this).hasClass('switch-trigger')) {
+          if (event.stopPropagation) {
+            event.stopPropagation();
+          } else if (window.event) {
+            window.event.cancelBubble = true;
+          }
+        }
+      });
+
+      $('.fixed-plugin .background-color span').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+
+        var new_color = $(this).data('color');
+
+        if ($sidebar.length != 0) {
+          $sidebar.attr('data', new_color);
+        }
+
+        if ($main_panel.length != 0) {
+          $main_panel.attr('data', new_color);
+        }
+
+        if ($full_page.length != 0) {
+          $full_page.attr('filter-color', new_color);
+        }
+
+        if ($sidebar_responsive.length != 0) {
+          $sidebar_responsive.attr('data', new_color);
+        }
+
+        $("body").attr("data", new_color)
+
+        var xhr = new XMLHttpRequest();
+        var url = "/setcolor?lang_code=en"
+        xhr.open("POST", url, true)
+        xhr.setRequestHeader("Content-Type", "application/json")
+
+        data = {
+          "color": new_color
+        }
+
+        try {
+          xhr.send(JSON.stringify(data))
+        } catch (error) {
+          console.log(error)
+        }
+
+      });
+
+      $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function () {
+        var $btn = $(this);
+
+        if (sidebar_mini_active == true) {
+          $('body').removeClass('sidebar-mini');
+          sidebar_mini_active = false;
+          blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+        } else {
+          $('body').addClass('sidebar-mini');
+          sidebar_mini_active = true;
+          blackDashboard.showSidebarMessage('Sidebar mini activated...');
+        }
+
+        // we simulate the window Resize so the charts will get updated in realtime.
+        var simulateWindowResize = setInterval(function () {
+          window.dispatchEvent(new Event('resize'));
+        }, 180);
+
+        // we stop the simulation of Window Resize after the animations are completed
+        setTimeout(function () {
+          clearInterval(simulateWindowResize);
+        }, 1000);
+      });
+
+      $('.switch-change-color input').on("switchChange.bootstrapSwitch", function () {
+        var $btn = $(this);
+        if (white_color == true) {
+
+          $('body').addClass('change-background');
+          setTimeout(function () {
+            $('body').removeClass('change-background');
+            $('body').removeClass('white-content');
+            $('.dropdown-menu').removeClass('white-content')
+            $('.list-group').removeClass('white-text')
+            $('ol.breadcrumb').removeClass('white-content')
+            $('.navbar').removeClass('white-content')
+          }, 900);
+          white_color = false;
+        } else {
+
+          $('body').addClass('change-background');
+          setTimeout(function () {
+            $('body').removeClass('change-background');
+            $('body').addClass('white-content');
+            $('.dropdown-menu').addClass('white-content')
+            $('.list-group').addClass('white-text')
+            $('ol.breadcrumb').addClass('white-content')
+            $('.navbar').addClass('white-content')
+          }, 900);
+
+          white_color = true;
+        }
+      });
+
+      $('.light-badge').click(function () {
+        $('body').addClass('white-content');
+        $('.dropdown-menu').addClass('white-content')
+        $('.list-group').addClass('white-text')
+        $('ol.breadcrumb').addClass('white-content')
+        $('.navbar').addClass('white-content')
+
+        localStorage.setItem("color", "white")
+      });
+
+      $('.dark-badge').click(function () {
+        $('body').removeClass('white-content');
+        $('.dropdown-menu').removeClass('white-content')
+        $('.list-group').removeClass('white-text')
+        $('ol.breadcrumb').removeClass('white-content')
+        $('.navbar').removeClass('white-content')
+
+        localStorage.setItem("color", "black")
+      });
+    });
+  });
+</script>
+
+<script>
+</script>
+<script>
+      $(document).ready(function () {
+        // Sidebar active
+        var path = window.location.pathname.split("/")[1];
+        if (path === "") {
+          path = "index";
+        } else if (path === "guild") {
+          path = "dashboard";
+        }
+        try {
+          $("#nav" + path).addClass("active");
+        } catch {
+          $("#navdashboard").addClass("active");
+        }
+      });
+
+      // Add data attributes to button's and a's
+      c = localStorage.getItem("theme");
+      if (localStorage.getItem("color") === "white") {
+        $("body").addClass("white-content");
+        $("nav").addClass("white-content");
+        $(".prefixdiv").addClass("white-content");
+      }
+      // Add white border to seleted color
+      $("span[data-color=primary").addClass("active");
+    </script>
+<script src="/static/assets/js/bootstrap-select.min.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"705607cb8b2b9ae9","version":"2021.12.0","r":1,"token":"1f3f183a9cfe4169bbb15afbc1ec6de4","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
