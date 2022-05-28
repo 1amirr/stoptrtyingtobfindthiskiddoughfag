@@ -1,3 +1,3 @@
 ---
-permalink: /embed
+permalink: /subs
 ---
