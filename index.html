@@ -1,1 +1,19 @@
-join https://amir.lol/discord
+ReferenceError: /root/amir.lol/views/index.ejs:15
+    13| 								<span>this.experiences.includes("</span>
+    14| 								<span class="ah-words-wrapper text-center">
+ >> 15| 									<% Object.keys(profile.experiences).sort((a,b) => 0.5 - Math.random()).forEach((exp, index) => { %>
+    16| 										<b class="<%= (index == 0) ? "is-visible" : "" %>"><%= exp %></b>
+    17| 									<% }) %>
+    18| 								</span>
+
+profile is not defined
+    at eval (eval at compile (/root/amir.lol/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:111:20)
+    at tryHandleCache (/root/amir.lol/node_modules/ejs/lib/ejs.js:251:36)
+    at View.exports.renderFile [as engine] (/root/amir.lol/node_modules/ejs/lib/ejs.js:482:10)
+    at View.render (/root/amir.lol/node_modules/express/lib/view.js:135:8)
+    at tryRender (/root/amir.lol/node_modules/express/lib/application.js:640:10)
+    at Function.render (/root/amir.lol/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/root/amir.lol/node_modules/express/lib/response.js:1012:7)
+    at /root/amir.lol/routes/pages/index.js:14:6
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
